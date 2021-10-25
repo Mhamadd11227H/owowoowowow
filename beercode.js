@@ -20,13 +20,13 @@ require("./util/eventLoader.js")(client);
 
 //===============================================================================\\
 client.on("ready", async () => {
-  client.user.setActivity(`>help | >invite |Server,${client.guilds.cache.size}`, {
+  client.user.setActivity(`+help | +invite |Server,${client.guilds.cache.size}`, {
     type: "PLAYING"
   });
 });
 //===============================================================================\\
 client.on("message", emprator => {
-  if (emprator.content === ">invite") {
+  if (emprator.content === "+invite") {
     emprator.channel.send(
       "https://discord.com/api/oauth2/authorize?client_id=807350534901071932&permissions=8&scope=bot"
     );
@@ -79,48 +79,48 @@ client.on("guildDelete", guild => {
 });
 //================================================================================\\
 client.on("message", message => {
-  if (message.content === ">help") {
+  if (message.content === "+help") {
     const embed = new Discord.MessageEmbed()
       .setThumbnail(client.user.avatarURL())
       .setColor("c6df00")
-      .setAuthor("The Prefix { > }").setDescription(`
-**<a:emoji_30:872142584875716689> ┇User Commands**
+      .setAuthor("The Prefix { + }").setDescription(`
+**<a:👤:┇User Commands**
 > bot - avatar - server
 > invite - support - kick
 > unlock - lock - role 
 > clear - server 
 
 
-**<:emoji_63:874713515502501960> ┇Economy Commands**
+**<a:🔴: ┇Economy Commands**
 > daily(d) - cash(c) - work(w)
 > send - steal - shop(h)
 
 
-**<a:emoji_90:870361065786069012> ┇Game Comamnds**
+**<a:🟠: ┇Game Comamnds**
 > coinflip(cf) - slots(s)
 > fish(f)
 
 
-**<a:emoji_19:870357283006205953> ┇Gif Commands**
+**<a:🟡: ┇Gif Commands**
 > anime - animel - boy
 > girl - baby - coulpe
 > smoking - sad - neon - emoji
 
 
-**<:emoji_79:870361413644873798> ┇Photo Commands**
+**<a:🟢: ┇Photo Commands**
 > pgirl - pboy - pemoji
 > panime - pcoulpe
 
 
-> **<:emoji_91:870360971825254470> ┇Link**
-[Support Bot](https://discord.gg/progresshome) - [Invite Kraken 🐙 Bot](https://discord.com/api/oauth2/authorize?client_id=807350534901071932&permissions=8&scope=bot) - [YouTube](coming soon) - [Website](coming soon)
+**<a:🟣: ┇Link**
+[Support Bot](https://discord.gg/MBdNZH3FsJ) - [Invite Coin 🐙 Bot](https://discord.com/api/oauth2/authorize?client_id=807350534901071932&permissions=8&scope=bot) - [YouTube](coming soon) - [Website](coming soon)
 `);
     message.channel.send(embed);
   }
 });
 //===============================================================================\\
 client.on("message", msg => {
-  if (msg.content.startsWith(">clear")) {
+  if (msg.content.startsWith("+clear")) {
     let args = msg.content.split(" ").slice(1);
 
     if (!msg.member.hasPermission("MANAGE_MESSAGES"))
@@ -140,7 +140,7 @@ client.on("message", msg => {
 });
 //===============================================================================\\
 client.on("message", russi => {
-  if (russi.content === ">server") {
+  if (russi.content === "+server") {
     let embed = new Discord.MessageEmbed()
       .setTitle(`${russi.guild.name}`) ///Russi
       .setThumbnail(client.user.avatarURL())
